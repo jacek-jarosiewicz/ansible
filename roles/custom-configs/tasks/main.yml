@@ -1,0 +1,12 @@
+---
+
+- name: Copy config file
+  copy:
+    src: "{{ item.file }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode | default('0644') }}"
+    group: "{{ item.group | default(default_gruop) }}"
+    owner: "{{ item.owner | default(default_owner) }}"
+  with_items:
+    - "{{ config_list }}"
+

@@ -1,0 +1,6 @@
+---
+
+- name: Run roles on a host
+  hosts: "{{ target_hosts }}"
+  roles:
+    - "{{ target_roles }}"

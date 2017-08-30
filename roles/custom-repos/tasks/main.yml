@@ -1,0 +1,23 @@
+---
+
+- name: Add APT key for repo
+  apt_key:
+    id: "{{ item }}"
+    keyserver: hkp://keyserver.ubuntu.com
+    state: present
+  with_items:
+    - "{{ repo_keys }}"
+
+- name: Add APT repo
+  apt_repository:
+    filename: "{{ item.filename }}"
+    repo: "{{ item.repo }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - "{{ repo_list }}"
+
+- name: Update APT cache
+  apt:
+    update_cache: yes
+

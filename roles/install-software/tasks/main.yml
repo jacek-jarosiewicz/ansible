@@ -1,0 +1,9 @@
+---
+
+- name: Install default software
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - "{{ software_list }}"
+

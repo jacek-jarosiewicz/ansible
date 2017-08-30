@@ -1,0 +1,22 @@
+---
+
+repo_keys:
+  - "7721F63BD38B4796" # google
+  - "A1715D88E1DF1F24" # git-core
+  - "A040830F7FAC5991" # google
+  - "A2F683C52980AECF" # oracle
+
+repo_list:
+  - {
+      repo: "deb http://ppa.launchpad.net/git-core/ppa/ubuntu {{ ansible_distribution_release }} main",
+      filename: "git-core"
+    }
+  - {
+      repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main",
+      filename: "google-chrome"
+    }
+  - {
+      repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib",
+      filename: "virtualbox"
+    }
+
